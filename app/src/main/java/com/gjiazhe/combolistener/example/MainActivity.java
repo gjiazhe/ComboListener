@@ -10,18 +10,18 @@ import android.widget.Toast;
 import com.gjiazhe.combolistener.ComboListenerBuilder;
 
 public class MainActivity extends AppCompatActivity {
-    private Button btnCombo;
-    private Toast toast;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        btnCombo = (Button) findViewById(R.id.btn_combo);
-        toast = Toast.makeText(this, "", Toast.LENGTH_SHORT);
 
-        new ComboListenerBuilder().setMaxInterval(500)
-                .observeOn(btnCombo)
+        final Toast toast = Toast.makeText(this, "", Toast.LENGTH_SHORT);
+        Button btnCombo = (Button) findViewById(R.id.btn_combo);
+
+        new ComboListenerBuilder()
+                .setMaxInterval(500)//set the Max Interval between two clicks, default is 300ms
+                .observeOn(btnCombo)//set the view to be observed
                 .setOnComboListener(new ComboListenerBuilder.OnComboListener() {
                     @Override
                     public void onCombo(View view, int comboCount) {

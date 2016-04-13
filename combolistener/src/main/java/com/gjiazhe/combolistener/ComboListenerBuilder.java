@@ -18,11 +18,13 @@ public class ComboListenerBuilder {
         mMaxInterval = DEFAULT_MAX_INTERVAL;
     }
 
+    //set the Max Interval between two clicks, default is 300ms
     public ComboListenerBuilder setMaxInterval(int maxInterval) {
         mMaxInterval = maxInterval;
         return this;
     }
 
+    //set the view to be observed
     public ComboListenerBuilder observeOn(View view) {
         mView = view;
         return this;
