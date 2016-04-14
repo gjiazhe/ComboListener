@@ -31,19 +31,21 @@ public class ComboListenerBuilder {
     }
 
     public void startListen() {
-        mView.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                long thisClickTime = System.currentTimeMillis();
-                if (thisClickTime - lastClickTime <= mMaxInterval) {
-                    mComboCount ++;
-                } else {
-                    mComboCount = 0;
+        if (mOnComboListener != null) {
+            mView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    long thisClickTime = System.currentTimeMillis();
+                    if (thisClickTime - lastClickTime <= mMaxInterval) {
+                        mComboCount++;
+                    } else {
+                        mComboCount = 0;
+                    }
+                    lastClickTime = thisClickTime;
+                    mOnComboListener.onCombo(v, mComboCount);
                 }
-                lastClickTime = thisClickTime;
-                mOnComboListener.onCombo(v, mComboCount);
-            }
-        });
+            });
+        }
     }
 
     public ComboListenerBuilder setOnComboListener(OnComboListener onComboListener) {
