@@ -4,7 +4,27 @@ Observe click combo on any view on Android.
 ##ScreenShot
 ![combo.gif](screenshot/Gif.gif)
 
-##Usages
+## Usages
+1.Include the library with Gradle or Maven.
+
+#### Gradle
+```groovy
+dependencies {
+   compile 'com.gjiazhe:combolistener:1.0.1'
+}
+```
+
+#### Maven 
+```xml
+<dependency>
+  <groupId>com.gjiazhe</groupId>
+  <artifactId>combolistener</artifactId>
+  <version>1.0.1</version>
+  <type>pom</type>
+</dependency>
+```
+
+2.In your code, use ComboListenerBuilder to set the options and the listener.
 
 ```java
 public class MainActivity extends AppCompatActivity {
