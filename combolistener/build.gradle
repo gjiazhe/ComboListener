@@ -29,7 +29,7 @@ publish {
     userOrg = 'gjiazhe'
     groupId = 'com.gjiazhe'
     artifactId = 'combolistener'
-    publishVersion = '1.0.0'
+    publishVersion = '1.0.1'
     desc = 'Observe click combo on any view on Android '
     website = 'https://github.com/gjiazhe/ComboListener'
 }

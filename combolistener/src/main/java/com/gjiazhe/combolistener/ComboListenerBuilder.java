@@ -11,7 +11,7 @@ public class ComboListenerBuilder {
     private int mMaxInterval;
     private View mView;
     private OnComboListener mOnComboListener;
-    private int mComboCount = 0;
+    private int mComboCount = 1;
     private long lastClickTime = 0;
 
     public ComboListenerBuilder() {
@@ -39,7 +39,7 @@ public class ComboListenerBuilder {
                     if (thisClickTime - lastClickTime <= mMaxInterval) {
                         mComboCount++;
                     } else {
-                        mComboCount = 0;
+                        mComboCount = 1;
                     }
                     lastClickTime = thisClickTime;
                     mOnComboListener.onCombo(v, mComboCount);
