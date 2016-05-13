@@ -31,7 +31,7 @@ public class ComboListenerBuilder {
     }
 
     public void startListen() {
-        if (mOnComboListener != null) {
+        if (mView != null && mOnComboListener != null) {
             mView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
