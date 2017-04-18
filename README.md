@@ -1,7 +1,7 @@
 # ComboListener
 Observe click combo on any view on Android.
 
-##ScreenShot
+## ScreenShot
 ![combo.gif](screenshot/Gif.gif)
 
 ## Usages
